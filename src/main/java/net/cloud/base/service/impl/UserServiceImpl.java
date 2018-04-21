@@ -64,7 +64,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements I
                 dbUser.setLocked(user.getLocked());
                 dbUser.setDescription(user.getDescription());
                 dbUser.setUpdateTime(new Date());
-                dbUser.setAvatar("/assets/img/touxiang.PNG");
+                dbUser.setAvatar(user.getAvatar());
                 update(dbUser);
             } else {
                 User checkuser =userDao.findByUserName(user.getUserName());

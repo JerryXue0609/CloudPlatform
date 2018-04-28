@@ -64,6 +64,7 @@ public class ShiroConfig {
         shiroFilter.setUnauthorizedUrl("/previlige/no");
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/assets/**", "anon");
+        filterChainDefinitionMap.put("/admin/user/register", "anon");
 
         filterChainDefinitionMap.put("/admin/login", "anon");
 

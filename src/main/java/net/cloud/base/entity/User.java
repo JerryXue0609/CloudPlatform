@@ -24,7 +24,7 @@ import net.cloud.base.entity.support.BaseEntity;
  * 用户账户表
  * </p>
  *
- * @author SPPan
+ * @author Jerry
  * @since 2016-12-28
  */
 @Entity

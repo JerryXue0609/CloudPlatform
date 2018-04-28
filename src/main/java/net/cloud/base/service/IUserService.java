@@ -1,5 +1,7 @@
 package net.cloud.base.service;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import net.cloud.base.common.JsonResult;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,7 +14,7 @@ import net.cloud.base.service.support.IBaseService;
  * 用户服务类
  * </p>
  *
- * @author SPPan
+ * @author Jerry
  * @since 2016-12-28
  */
 public interface IUserService extends IBaseService<User, Integer> {
@@ -24,6 +26,13 @@ public interface IUserService extends IBaseService<User, Integer> {
      * @return
      */
     User findByUserName(String username);
+
+    /**
+     * 对外接口：注册用户，返回提示
+     * @param jsonData
+     * @return
+     */
+    JsonResult save(String jsonData);
 
     /**
      * 增加或者修改用户

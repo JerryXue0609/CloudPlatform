@@ -1,11 +1,9 @@
 package net.cloud.base.controller.admin.system;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
+import net.cloud.base.common.JsonResult;
 import net.cloud.base.controller.BaseController;
 import net.cloud.base.entity.Role;
+import net.cloud.base.entity.User;
 import net.cloud.base.service.IRoleService;
 import net.cloud.base.service.IUserService;
 import org.apache.shiro.SecurityUtils;
@@ -14,13 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import net.cloud.base.common.JsonResult;
-import net.cloud.base.entity.User;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/admin/user")
@@ -48,6 +44,12 @@ public class UserController extends BaseController {
         User user = userService.find(id);
         map.put("user", user);
         return "admin/user/form";
+    }
+
+    @PostMapping(value = "/register")
+    @ResponseBody
+    public JsonResult register(@RequestBody String jsonData) {
+        return userService.save(jsonData);
     }
 
     @RequestMapping(value = {"/edit"}, method = RequestMethod.POST)

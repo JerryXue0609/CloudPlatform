@@ -23,7 +23,7 @@ import net.cloud.base.entity.support.BaseEntity;
  * 角色表
  * </p>
  *
- * @author SPPan
+ * @author Jerry
  * @since 2016-12-28
  */
 @Entity

@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import net.cloud.base.common.JsonResult;
 import net.cloud.base.dao.IUserDao;
 import net.cloud.base.dao.support.IBaseDao;
@@ -21,12 +23,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import javax.jws.soap.SOAPBinding;
+
 /**
  * <p>
  * 用户账户表  服务实现类
  * </p>
  *
- * @author SPPan
+ * @author Jerry
  * @since 2016-12-28
  */
 @Service
@@ -51,10 +55,25 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements I
     }
 
     @Override
+    public JsonResult save(String jsonData) {
+        User user = JSON.parseObject(jsonData, User.class);
+        User checkuser =userDao.findByUserName(user.getUserName());
+        if (checkuser != null){
+            return JsonResult.registerError("用户名已存在");
+        }
+        if (user.getUserName().equals("") || user.getPassword().equals("")){
+            return JsonResult.registerError("用户名或密码不能为空");
+        }
+        user.setPassword(MD5Utils.md5(user.getPassword()));
+        userDao.save(user);
+        return JsonResult.registerSuccess(user.getUserName()+"注册成功");
+    }
+
+
+    @Override
     public void saveOrUpdate(User user) {
             if (user.getId() != null) {
                 User dbUser = find(user.getId());
-
                 dbUser.setNickName(user.getNickName());
                 dbUser.setSex(user.getSex());
                 dbUser.setBirthday(user.getBirthday());

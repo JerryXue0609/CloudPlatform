@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Json 统一返回消息类
  *
- * @author SPPan
+ * @author Jerry
  */
 public class JsonResult implements Serializable {
     private static final long serialVersionUID = -1491499610244557029L;
@@ -13,9 +13,14 @@ public class JsonResult implements Serializable {
     public static int CODE_FAILURED = -1;
     public static String[] NOOP = new String[]{};
 
-    private int code; // 处理状态：0: 成功
+    private int code; //
     private String message;
     private Object data; // 返回数据
+
+    private JsonResult(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
 
     private JsonResult(int code, String message, Object data) {
         this.code = code;
@@ -31,6 +36,23 @@ public class JsonResult implements Serializable {
      */
     public static final JsonResult success(Object data) {
         return new JsonResult(CODE_SUCCESS, "操作成功", data);
+    }
+
+    /**
+     *注册成功
+     * @param msg
+     * @return
+     */
+    public static final JsonResult registerSuccess(String msg){
+        return new JsonResult(1,msg,NOOP);
+    }
+    /**
+     *注册失败，返回错误信息
+     * @param msg
+     * @return
+     */
+    public static final JsonResult registerError(String msg){
+        return new JsonResult(0,msg,NOOP);
     }
 
     /**

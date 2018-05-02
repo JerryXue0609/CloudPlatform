@@ -12,7 +12,7 @@ import net.cloud.base.service.support.IBaseService;
  * </p>
  *
  * @author Jerry
- * @since 2016-12-28
+ *
  */
 public interface IRoleService extends IBaseService<Role, Integer> {
 

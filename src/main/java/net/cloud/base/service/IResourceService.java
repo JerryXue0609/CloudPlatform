@@ -17,7 +17,7 @@ import java.util.List;
  * </p>
  *
  * @author Jerry
- * @since 2016-12-28
+ *
  */
 @Component
 public interface IResourceService extends IBaseService<Resource, Integer> {

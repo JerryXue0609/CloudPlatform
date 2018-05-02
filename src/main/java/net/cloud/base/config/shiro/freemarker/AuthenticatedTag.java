@@ -22,7 +22,7 @@ import java.util.Map;
  * <p>
  * <p>Equivalent to {@link org.apache.shiro.web.tags.AuthenticatedTag}</p>
  *
- * @since 0.2
+ *  0.2
  */
 public class AuthenticatedTag extends SecureTag {
     private static final Logger log = Logger.getLogger("AuthenticatedTag");

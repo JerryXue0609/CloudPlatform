@@ -22,7 +22,7 @@ import net.cloud.base.entity.support.BaseEntity;
  * </p>
  *
  * @author Jerry
- * @since 2016-12-28
+ *
  */
 @Entity
 @Table(name = "tb_resource")

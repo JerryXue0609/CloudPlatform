@@ -26,7 +26,7 @@ import org.apache.shiro.subject.Subject;
  * <p>
  * <p>Equivalent to {@link org.apache.shiro.web.tags.HasAnyRolesTag}</p>
  *
- * @since 0.2
+ *  0.2
  */
 public class HasAnyRolesTag extends RoleTag {
     // Delimeter that separates role names in tag attribute

@@ -27,7 +27,7 @@ import net.cloud.base.entity.Role;
  * </p>
  *
  * @author Jerry
- * @since 2016-12-28
+ *
  */
 @Service
 public class RoleServiceImpl extends BaseServiceImpl<Role, Integer> implements IRoleService {

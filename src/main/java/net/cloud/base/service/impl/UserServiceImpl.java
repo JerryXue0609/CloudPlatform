@@ -31,7 +31,7 @@ import javax.jws.soap.SOAPBinding;
  * </p>
  *
  * @author Jerry
- * @since 2016-12-28
+ *
  */
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements IUserService {

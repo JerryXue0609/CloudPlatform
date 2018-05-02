@@ -18,7 +18,7 @@ import java.util.Map;
  * <p>
  * <p>Equivalent to {@link org.apache.shiro.web.tags.GuestTag}</p>
  *
- * @since 0.9
+ *  0.9
  */
 public class GuestTag extends SecureTag {
     private static final Logger log = Logger.getLogger("AuthenticatedTag");

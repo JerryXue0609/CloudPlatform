@@ -26,7 +26,7 @@ import java.util.Map;
  * <p>
  * <p>Equivalent to {@link org.apache.shiro.web.tags.PrincipalTag}</p>
  *
- * @since 0.2
+ *  0.2
  */
 public class PrincipalTag extends SecureTag {
     static final Logger log = Logger.getLogger("PrincipalTag");

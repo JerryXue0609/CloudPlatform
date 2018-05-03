@@ -1,11 +1,12 @@
 package net.cloud.base.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import net.cloud.base.entity.support.BaseEntity;
 
-public class Device {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tb_device")
+public class Device extends BaseEntity{
     private static final long serialVersionUID = 1L;
 
     /**

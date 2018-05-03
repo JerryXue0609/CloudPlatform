@@ -1,11 +1,12 @@
 package net.cloud.base.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import net.cloud.base.entity.support.BaseEntity;
 
-public class Relation {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tb_relation")
+public class Relation extends BaseEntity{
     /**
      * 关系id
      */

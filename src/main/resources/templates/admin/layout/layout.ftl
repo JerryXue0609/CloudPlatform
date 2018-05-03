@@ -128,6 +128,9 @@
             <@shiro.hasPermission name="system:resource:index">
                 <li <#if active=="resource">class="active"</#if>><a href="${ctx!}/admin/resource/index"><i class="fa fa-file-o"></i> 资源管理</a></li>
             </@shiro.hasPermission>
+              <@shiro.hasPermission name="system:dev:index">
+                  <li <#if active=="dev">class="active"</#if>><a href="${ctx!}/admin/dev/index"><i class="fa fa-file-o"></i>设备管理</a></li>
+              </@shiro.hasPermission>
           </ul>
         </li>
 

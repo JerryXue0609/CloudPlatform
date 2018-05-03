@@ -64,7 +64,13 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements I
         if (user.getUserName().equals("") || user.getPassword().equals("")){
             return JsonResult.registerError("用户名或密码不能为空");
         }
+        user.setNickName(user.getUserName());
         user.setPassword(MD5Utils.md5(user.getPassword()));
+        user.setAvatar("/assets/img/touxiang.PNG");
+        user.setCreateTime(new Date());
+        user.setUpdateTime(new Date());
+        user.setDeleteStatus(0);
+        user.setLocked(0);
         userDao.save(user);
         return JsonResult.registerSuccess(user.getUserName()+"注册成功");
     }

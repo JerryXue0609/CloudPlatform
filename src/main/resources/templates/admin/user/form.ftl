@@ -62,39 +62,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">性别：</label>
-                            <div class="col-sm-10">
-                                <select name="sex" class="form-control">
-                                    <option value="0" <#if user.sex == 0>selected="selected"</#if>>女</option>
-                                    <option value="1" <#if user.sex == 1>selected="selected"</#if>>男</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">出生日期：</label>
-                            <div class="col-sm-10">
-                                <input id="birthday" name="birthday"  class="laydate-icon form-control layer-date" value="${user.birthday}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">电话：</label>
-                            <div class="col-sm-10">
-                                <input id="telephone" name="telephone" class="form-control" value="${user.telephone}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">E-mail：</label>
-                            <div class="col-sm-10">
-                                <input id="email" name="email" class="form-control" value="${user.email}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">地址：</label>
-                            <div class="col-sm-10">
-                                <input id="address" name="address" class="form-control" value="${user.address}">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-2 control-label">状态：</label>
                             <div class="col-sm-10">
                                 <select name="locked" class="form-control">

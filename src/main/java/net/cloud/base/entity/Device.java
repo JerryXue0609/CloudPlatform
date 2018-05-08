@@ -1,8 +1,10 @@
 package net.cloud.base.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import net.cloud.base.entity.support.BaseEntity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "tb_device")
@@ -23,14 +25,20 @@ public class Device extends BaseEntity{
     private String name;
 
     /**
-     * 端口
+     *语音端口
      */
-    private Integer port;
+    private Integer port_a;
 
     /**
-     * 状态,1是在线，0是离线
+     *控制端口
      */
-    private Integer status;
+    private Integer port_c;
+
+    /**
+     * 更新时间
+     */
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date update_time;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -52,19 +60,27 @@ public class Device extends BaseEntity{
         this.name = name;
     }
 
-    public Integer getPort() {
-        return port;
+    public Integer getPort_a() {
+        return port_a;
     }
 
-    public void setPort(Integer port) {
-        this.port = port;
+    public void setPort_a(Integer port_a) {
+        this.port_a = port_a;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getPort_c() {
+        return port_c;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setPort_c(Integer port_c) {
+        this.port_c = port_c;
+    }
+
+    public Date getUpdate_time() {
+        return update_time;
+    }
+
+    public void setUpdate_time(Date update_time) {
+        this.update_time = update_time;
     }
 }

@@ -44,7 +44,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>C</b>loud</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>云平台</b></span>
+      <span class="logo-lg"><b>智能门锁云平台</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -78,10 +78,10 @@
                       <!-- Menu Footer-->
                       <li class="user-footer">
                           <div class="pull-left">
-                              <a href="${ctx!}/admin/user/updatePwd" class="btn btn-default btn-flat">Change pass</a>
+                              <a href="${ctx!}/admin/user/updatePwd" class="btn btn-default btn-flat">修改密码</a>
                           </div>
                           <div class="pull-right">
-                              <a href="${ctx!}/admin/logout" class="btn btn-default btn-flat">Sign out</a>
+                              <a href="${ctx!}/admin/logout" class="btn btn-default btn-flat">登出账号</a>
                           </div>
                       </li>
                   </ul>

@@ -51,10 +51,6 @@
                     <th>ID</th>
                     <th>账户名</th>
                     <th>昵称</th>
-                    <th>性别</th>
-                    <th>电话</th>
-                    <th>邮箱</th>
-                    <th>住址</th>
                     <th>删除状态</th>
                     <th>锁定</th>
                     <th>创建时间</th>
@@ -65,18 +61,6 @@
                     <td>${userInfo.id}</td>
                     <td>${userInfo.userName}</td>
                     <td>${userInfo.nickName}</td>
-                    <td>
-                        <#if userInfo.sex == 1>
-                            <span class="label label-info">男</span>
-                        <#elseif userInfo.sex == 0>
-                            <span class="label label-danger">女</span>
-                        <#else >
-                            <span class="label label-warning">未知</span>
-                        </#if>
-                    </td>
-                    <td>${userInfo.telephone}</td>
-                    <td>${userInfo.email}</td>
-                    <td>${userInfo.address}</td>
                     <td>
                         <#if userInfo.deleteStatus == 1>
                             <span class="label label-danger">已删除</span>

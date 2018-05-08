@@ -37,24 +37,26 @@
                 <tr>
                     <th>DeviceID</th>
                     <th>设备名</th>
-                    <th>端口号</th>
-                    <th>状态</th>
+                    <th>语音端口号</th>
+                    <th>控制端口号</th>
+                    <th>当前状态</th>
                 </tr>
                 <#list pageInfo.content as devInfo>
                 <tr>
                     <td>${devInfo.id}</td>
                     <td>${devInfo.name}</td>
-                    <td>${devInfo.port}</td>
-                    <td>
-                        <#if devInfo.status == 1>
+                    <td>${devInfo.port_a}</td>
+                    <td>${devInfo.port_c}</td>
+                  <#--  <td>
+                        <#if (devInfo.updaTime - ${.now?date})<= +- 30>
                             <span class="label label-info">ON</span>
                         <#elseif devInfo.status == 0>
                             <span class="label label-danger">OFF</span>
                         <#else >
                             <span class="label label-warning">UnKnow</span>
                         </#if>
-                    </td>
-                    <td>${userInfo.createTime}</td>
+                    </td>-->
+                    <td>${devInfo.updateTime}</td>
                     <td>
                     <@shiro.hasPermission name="system:user:edit">
                         <a class="btn btn-sm btn-primary" href="${ctx!}/admin/user/edit/${userInfo.id}">编辑</a>

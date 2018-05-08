@@ -81,11 +81,6 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements I
             if (user.getId() != null) {
                 User dbUser = find(user.getId());
                 dbUser.setNickName(user.getNickName());
-                dbUser.setSex(user.getSex());
-                dbUser.setBirthday(user.getBirthday());
-                dbUser.setTelephone(user.getTelephone());
-                dbUser.setEmail(user.getEmail());
-                dbUser.setAddress(user.getAddress());
                 dbUser.setLocked(user.getLocked());
                 dbUser.setDescription(user.getDescription());
                 dbUser.setUpdateTime(new Date());

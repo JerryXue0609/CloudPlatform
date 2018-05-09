@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="Cloud_Platform:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="Cloud_Platform-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="Cloud_Platform:war exploded" />
-    </root>
-  </artifact>
-</component>

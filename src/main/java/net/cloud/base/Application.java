@@ -11,8 +11,12 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
-public class Application {
-    public static void main(String[] args) {
+public class Application extends SpringBootServletInitializer{
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(Application.class);
+    }
+    public static void main(String[] args)  {
         SpringApplication.run(Application.class, args);
     }
 }

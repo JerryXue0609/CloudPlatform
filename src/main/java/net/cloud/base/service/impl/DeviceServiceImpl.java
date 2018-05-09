@@ -9,6 +9,7 @@ import net.cloud.base.service.IDeviceService;
 import net.cloud.base.service.support.impl.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -55,5 +56,28 @@ public class DeviceServiceImpl extends BaseServiceImpl<Device, Integer> implemen
         String newDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         deviceDao.updateTimeByName(new Date(),device.getName());
         return JsonResult.registerSuccess("设备："+device.getName()+"更新时间成功!"+newDate);
+    }
+
+    @Override
+    public void saveOrUpdate(Device device) {
+        if (device.getId() != null) {
+            Device dbdevice = find(device.getId());
+            Device checkname =deviceDao.findByName(dbdevice.getName());
+            Assert.isTrue(checkname==null,"设备名称已存在！");
+            dbdevice.setName(device.getName());
+            dbdevice.setPort_a(device.getPort_a());
+            dbdevice.setPort_c(device.getPort_c());
+            dbdevice.setUpdate_time(new Date());
+            update(dbdevice);
+        } else {
+            Device checkdevice =deviceDao.findByName(device.getName());
+            Assert.isTrue(checkdevice==null,"设备名称已存在！");
+            device.setName(device.getName());
+            device.setPort_a(device.getPort_a());
+            device.setPort_c(device.getPort_c());
+            device.setUpdate_time(new Date());
+            save(device);
+        }
+        
     }
 }

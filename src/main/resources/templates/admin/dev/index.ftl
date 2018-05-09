@@ -6,10 +6,25 @@
 </#assign>
 <#assign js>
 <script>
+    function del(id) {
+        layer.confirm('确定删除吗?', {icon: 3, title: '提示'}, function (index) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "${ctx!}/admin/dev/delete/" + id,
+                success: function (res) {
+                    layer.msg(res.message, {time: 2000}, function () {
+                        location.reload();
+                    });
+                }
+            });
+        });
+    }
+</script>
 
 </script>
 </#assign>
-<@layout title="设备管理" active="user">
+<@layout title="设备管理" active="dev">
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
@@ -58,14 +73,14 @@
                     </td>-->
                     <td>${devInfo.updateTime}</td>
                     <td>
-                    <@shiro.hasPermission name="system:user:edit">
-                        <a class="btn btn-sm btn-primary" href="${ctx!}/admin/user/edit/${userInfo.id}">编辑</a>
+                    <@shiro.hasPermission name="system:dev:edit">
+                        <a class="btn btn-sm btn-primary" href="${ctx!}/admin/dev/show/${devInfo.id}">编辑</a>
                     </@shiro.hasPermission>
                   <#--  <@shiro.hasPermission name="system:user:grant">
                         <a class="btn btn-sm btn-warning" href="${ctx!}/admin/user/grant/${userInfo.id}">分配角色</a>
                     </@shiro.hasPermission>-->
                     <@shiro.hasPermission name="system:user:deleteBatch">
-                        <button class="btn btn-sm btn-danger" onclick="del(${userInfo.id})">删除</button>
+                        <button class="btn btn-sm btn-danger" onclick="del(${devInfo.id})">删除</button>
                     </@shiro.hasPermission>
                     </td>
                 </tr>

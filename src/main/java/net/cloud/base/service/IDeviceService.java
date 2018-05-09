@@ -21,4 +21,11 @@ public interface IDeviceService extends IBaseService<Device,Integer>{
      */
 
     JsonResult updateTime(String jsonData);
+
+    /**
+     * 增加或者修改用户
+     *
+     * @param device
+     */
+    void saveOrUpdate(Device device);
 }

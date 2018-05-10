@@ -12,7 +12,7 @@
             data: $(".form-edit").serialize(),
             dataType: "JSON",
             success: function(res){
-                layer.msg(res.message, {time: 2000
+                layer.msg(res.message, {time: 1000
                 }, function(){
                     location.reload();
                 });

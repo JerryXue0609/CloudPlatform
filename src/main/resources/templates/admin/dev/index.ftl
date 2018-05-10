@@ -62,16 +62,14 @@
                     <td>${devInfo.name}</td>
                     <td>${devInfo.port_a}</td>
                     <td>${devInfo.port_c}</td>
-                  <#--  <td>
-                        <#if (devInfo.updaTime - ${.now?date})<= +- 30>
+                    <td>
+                        <#if (.now?string("yyyy-MM-dd HH:mm")= devInfo.update_time?string("yyyy-MM-dd HH:mm"))&&((.now?string("ss")?eval-devInfo.update_time?string("ss")?eval ) <= 30)>
                             <span class="label label-info">ON</span>
-                        <#elseif devInfo.status == 0>
-                            <span class="label label-danger">OFF</span>
                         <#else >
-                            <span class="label label-warning">UnKnow</span>
+                            <span class="label label-danger">OFF</span>
                         </#if>
-                    </td>-->
-                    <td>${devInfo.updateTime}</td>
+                    </td>
+                    <#--<td>${devInfo.update_time?string("mm")}</td>-->
                     <td>
                     <@shiro.hasPermission name="system:dev:edit">
                         <a class="btn btn-sm btn-primary" href="${ctx!}/admin/dev/show/${devInfo.id}">编辑</a>

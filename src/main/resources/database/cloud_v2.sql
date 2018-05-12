@@ -2,7 +2,8 @@
 SQLyog v10.2 
 MySQL - 5.5.28 : Database - base
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -25,7 +26,7 @@ CREATE TABLE `tb_device` (
   `name` varchar(55) DEFAULT NULL COMMENT '设备名称',
   `port_a` int(11) DEFAULT NULL COMMENT '绑定端口',
   `port_c` int(11) DEFAULT NULL COMMENT '状态',
-  `updateTime` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

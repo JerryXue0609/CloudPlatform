@@ -12,7 +12,7 @@
             data: $(".form-edit").serialize(),
             dataType: "JSON",
             success: function(res){
-                layer.msg(res.message, {time: 2000
+                layer.msg(res.message, {time: 1000
                 }, function(){
                     location.reload();
                 });
@@ -58,7 +58,11 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">头像URL：</label>
                             <div class="col-sm-10">
-                                <input id="avatar" name="avatar" class="form-control" type="url" value="${user.avatar}">
+                                <select id="avatar" name="avatar" class="form-control" type="url" >
+                                    <option value ="/assets/img/touxiang.PNG">默认头像1</option>
+                                    <option value ="/assets/img/touxiang2.PNG">默认头像2</option>
+                                </select>
+                               <#-- <input id="avatar" name="avatar" class="form-control" type="url" value="${user.avatar}">-->
                             </div>
                         </div>
                         <div class="form-group">

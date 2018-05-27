@@ -20,7 +20,6 @@
             });
         });
     }
-</script>
 
 </script>
 </#assign>
@@ -54,7 +53,8 @@
                     <th>设备名</th>
                     <th>语音端口号</th>
                     <th>控制端口号</th>
-                    <th>当前状态</th>
+                    <th>当前设备状态</th>
+                    <th>操作</th>
                 </tr>
                 <#list pageInfo.content as devInfo>
                 <tr>
@@ -77,7 +77,7 @@
                   <#--  <@shiro.hasPermission name="system:user:grant">
                         <a class="btn btn-sm btn-warning" href="${ctx!}/admin/user/grant/${userInfo.id}">分配角色</a>
                     </@shiro.hasPermission>-->
-                    <@shiro.hasPermission name="system:user:deleteBatch">
+                    <@shiro.hasPermission name="system:dev:delete">
                         <button class="btn btn-sm btn-danger" onclick="del(${devInfo.id})">删除</button>
                     </@shiro.hasPermission>
                     </td>

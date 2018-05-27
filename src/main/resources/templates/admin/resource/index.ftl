@@ -50,7 +50,7 @@
                 <tr>
                     <th>ID</th>
                     <th>资源名称</th>
-                    <th>资源key</th>
+                    <th>权限key</th>
                     <th>类型</th>
                     <th>资源url</th>
                     <th>层级</th>

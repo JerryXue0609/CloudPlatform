@@ -21,7 +21,7 @@
         </div>
         <!-- /.box-body -->
     </div>
-    <div ><img src="/assets/img/bg11.jpg" style="width: auto;height: 400px;margin-left: 15%;"></div>
+    <div ><img src="/assets/img/bg11.jpg" style="width:70%;margin-left: 15%;"></div>
     <!-- /.box -->
 
 </section>

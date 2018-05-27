@@ -81,7 +81,7 @@
                               <a href="${ctx!}/admin/user/updatePwd" class="btn btn-default btn-flat">修改密码</a>
                           </div>
                           <div class="pull-right">
-                              <a href="${ctx!}/admin/logout" class="btn btn-default btn-flat">登出账号</a>
+                              <a href="${ctx!}/admin/logout" class="btn btn-default btn-flat">安全登出</a>
                           </div>
                       </li>
                   </ul>
@@ -113,7 +113,7 @@
         <li <#if active = "home">class="active" </#if>><a href="${ctx!}/admin/index"><i class="fa fa-home"></i> <span>主页</span></a></li>
         <li class="treeview <#if active=="user" || active=="role" || active=="resource" >active</#if>">
           <a href="#">
-            <i class="fa fa-cog"></i> <span>系统管理</span>
+            <i class="fa fa-cog"></i> <span>云平台管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

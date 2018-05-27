@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">设备名称：</label>
                             <div class="col-sm-10">
-                                <input id="name" name="name" class="form-control" type="text" value="${device.name}"  >
+                                <input id="name" name="name" class="form-control" type="text" value="${device.name}"<#if device?exists> readonly="readonly"</#if> >
                             </div>
                         </div>
                         <div class="form-group">

@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * Created by Jerry on 2018/5/3 0003.
@@ -42,12 +45,14 @@ public class DeviceController extends BaseController {
 
     @PostMapping(value = "/updateTime")
     @ResponseBody
-    public JsonResult updateTime(@RequestBody String jsonData) {
+    public JsonResult updateTime(@RequestBody String jsonData)
+    {
         return devService.updateTime(jsonData);
     }
-    @PostMapping(value = "/edit")
+
+    @RequestMapping(value = {"/edit"}, method = RequestMethod.POST)
     @ResponseBody
-    public JsonResult edit(Device device, ModelMap map) {
+    public JsonResult edit(@Valid Device device, ModelMap map, BindingResult bindingResult) {
         try {
             devService.saveOrUpdate(device);
         } catch (Exception e) {

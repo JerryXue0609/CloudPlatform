@@ -11,6 +11,7 @@
             $.ajax({
                 type: "POST",
                 dataType: "json",
+                async:false,
                 url: "${ctx!}/admin/user/delete/" + id,
                 success: function (res) {
                     layer.msg(res.message, {time: 2000}, function () {
@@ -18,6 +19,18 @@
                     });
                 }
             });
+        });
+    }
+    function search() {
+        var search = $('#search').val();
+        $.ajax({
+            url: "${ctx!}/admin/user/search" ,
+            type: "GET",
+            data: {"search":search},
+            dataType: "json",
+            success:function(res){
+                window.location.href="/admin/user/search";
+            }
         });
     }
 </script>
@@ -44,6 +57,18 @@
         <@shiro.hasPermission name="system:user:add">
             <a class="btn btn-sm btn-success" href="${ctx!}/admin/user/add">注册新用户</a>
         </@shiro.hasPermission>
+           <#-- <input type="text" name="username"  id="search"/> <button class="btn btn-sm btn-danger" onclick="search()">搜索</button>
+            -->
+            <div class="row" style="width:30%;float: right">
+              <form id="form" action="${ctx!}/admin/user/search" method="get">
+                  <table>
+                      <tr>
+                          <td> <input type="username" name="username" class="form-control" placeholder="username"></td>
+                          <td><input type="submit" class="btn btn-primary btn-block btn-flat btn-sign" value="查询"></td>
+                      </tr>
+                  </table>
+            </form>
+            </div>
         </div>
         <div class="box-body">
             <table class="table table-striped">
